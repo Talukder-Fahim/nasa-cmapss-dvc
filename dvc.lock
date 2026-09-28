@@ -1,0 +1,21 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+    - path: data/raw/train_FD001.txt
+      hash: md5
+      md5: 259f340bac32ce6fa8894815600fa757
+      size: 3515356
+    - path: src/preprocess.py
+      hash: md5
+      md5: 07aa6bc88c63c95f6620a5a2b98e2cb7
+      size: 1218
+    params:
+      params.yaml:
+        rul_cap: 125
+    outs:
+    - path: data/processed/train_FD001_processed.csv
+      hash: md5
+      md5: 4ff8deb6d5773f0d849d1aa7133312f6
+      size: 7205827
