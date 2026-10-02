@@ -30,3 +30,11 @@ stages:
     metrics:
     - metrics.json:
         cache: false
+  drift_check:
+    cmd: python src/drift_check.py
+    deps:
+      - data/raw/train_FD001.txt
+      - data/raw/train_FD002.txt
+      - src/drift_check.py
+    outs:
+      - drift_report.html
