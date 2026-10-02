@@ -32,30 +32,30 @@ stages:
       size: 1024
     params:
       params.yaml:
-        max_depth: 10
-        n_estimators: 50
-        random_state: 42
-        test_size: 0.2
+        max_depth: 5
+        n_estimators: 40
+        random_state: 20
+        test_size: 0.15
     outs:
     - path: data/processed/test_split.csv
       hash: md5
-      md5: c09c23684308bb959c2d987337b14884
-      size: 1373675
+      md5: c7216b310715d3f544b4941935005405
+      size: 950928
     - path: model.pkl
       hash: md5
-      md5: dfcad7a9b64522d08a29c1ace157f86f
-      size: 5750769
+      md5: 366fcc4a01aef7e08c1082892d39603f
+      size: 195729
   evaluate:
     cmd: python src/evaluate.py
     deps:
     - path: data/processed/test_split.csv
       hash: md5
-      md5: c09c23684308bb959c2d987337b14884
-      size: 1373675
+      md5: c7216b310715d3f544b4941935005405
+      size: 950928
     - path: model.pkl
       hash: md5
-      md5: dfcad7a9b64522d08a29c1ace157f86f
-      size: 5750769
+      md5: 366fcc4a01aef7e08c1082892d39603f
+      size: 195729
     - path: src/evaluate.py
       hash: md5
       md5: 1c8a85e566b7c3a982668ddbdde74970
@@ -63,5 +63,5 @@ stages:
     outs:
     - path: metrics.json
       hash: md5
-      md5: d2395ffc8e89fb51d56b8ea70044e424
-      size: 63
+      md5: 69b34aa6870d964a4065c47c4796803f
+      size: 64
