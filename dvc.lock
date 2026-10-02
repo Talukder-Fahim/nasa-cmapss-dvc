@@ -65,3 +65,23 @@ stages:
       hash: md5
       md5: 69b34aa6870d964a4065c47c4796803f
       size: 64
+  drift_check:
+    cmd: python src/drift_check.py
+    deps:
+    - path: data/raw/train_FD001.txt
+      hash: md5
+      md5: 259f340bac32ce6fa8894815600fa757
+      size: 3515356
+    - path: data/raw/train_FD002.txt
+      hash: md5
+      md5: b6eaab2a6b589e5e41d43ca2f99e379b
+      size: 9082480
+    - path: src/drift_check.py
+      hash: md5
+      md5: 72099ed12a808ae4652fb0be76ee224a
+      size: 3440
+    outs:
+    - path: drift_report.html
+      hash: md5
+      md5: 8005298e8f8bcf1ea115d594db449167
+      size: 5337726
